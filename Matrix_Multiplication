@@ -1,0 +1,92 @@
+#include <stdio.h>
+
+int main() {
+    int i,j,n,m,g,h,k;
+    int mat1[20][20];
+    int mat2[20][20];
+    int result[100][100];
+    printf("enter number of rows: ");
+    scanf("%d",&m);
+    printf("enter number of columns: ");
+    scanf("%d",&n);
+    printf("Enter elements of matrix 1: \n");
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf("%d",&mat1[i][j]);
+        }
+        
+    }
+    printf("\n");
+    printf("MATRIX 1: \n");
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf("%d ",mat1[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    
+//Reading and printing mat 2
+    printf("enter number of rows (Matrix 2): ");
+    scanf("%d",&g);
+    printf("enter number of columns(Matrix 2): ");
+    scanf("%d",&h);
+    printf("\n");
+    if(n==g)
+    {
+        printf("Enter elements of matrix 2: \n");
+        for(i=0;i<g;i++)
+        {
+            for(j=0;j<h;j++)
+            {
+                scanf("%d",&mat2[i][j]);
+            }
+            
+        }
+        printf("\n");
+        printf("MATRIX 2: \n");
+        for(i=0;i<g;i++)
+        {
+            for(j=0;j<h;j++)
+            {
+                printf("%d ",mat2[i][j]);
+            }
+            printf("\n");
+        }
+        printf("\n");
+        printf("Multiplying MATRIX 1 with MATRIX 2\n");
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                result[i][j]=0;
+                for(int k=0;k<n;k++)
+                {
+                    result[i][j]=result[i][j]+(mat1[i][k]*mat2[k][j]);
+                }
+            }
+        }
+         for(i=0;i<m;i++)
+        {
+            for(j=0;j<h;j++)
+            {
+                printf("%d ",result[i][j]);
+            }
+            printf("\n");
+        }
+        
+    }
+    
+    else
+    {
+        printf("The given 2 matrices can't be multiplied.");
+    }
+        
+        
+    
+    return 0;
+    }
